@@ -23,7 +23,8 @@ classdef wasd
                 case 'z'
                     accel_t = obj.tz;
             end
-            duration = round(length(obj.tx)/600);
+            t = accel_t(:,1);
+            duration = round(t(end)/60);
             
             figure()
             plot(accel_t(:,1),accel_t(:,2))
@@ -50,12 +51,14 @@ classdef wasd
             high = (pi-(pi/N))*Fs;
             frequencies_shifted = linspace(low, high, N)';
             
-            duration = round(length(obj.tx)/600);
+            duration = round(t(end)/60);
             figure()
             stem(frequencies_shifted,abs(real(fourier)))
             title("Frequency plot of a "+ duration +" minute game of " + obj.game);
             xlabel('Frequencies (Hz)')
             ylabel('Amplitude')
+            xlim([-5 5])
+            ylim([0 1000])
         end
     end
     methods(Static)
@@ -64,7 +67,7 @@ classdef wasd
                 data
                 threshold {mustBeNonempty} = 0.4
             end
-            data(abs(data(:,2))>threshold,:) = [];
+            data((data(:,2))>threshold,:) = [];
         end
     end
 end
