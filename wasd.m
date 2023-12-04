@@ -57,7 +57,7 @@ classdef wasd
             title("Frequency plot of a "+ duration +" minute game of " + obj.game);
             xlabel('Frequencies (Hz)')
             ylabel('Amplitude')
-            xlim([-5 5])
+            xlim([-0.5 0.5])
             ylim([0 1000])
         end
     end
