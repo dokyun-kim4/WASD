@@ -62,12 +62,14 @@ classdef wasd
         end
     end
     methods(Static)
-        function data = trim(data,threshold)
+        function data = trim(data,threshold_low,threshold_high)
             arguments
                 data
-                threshold {mustBeNonempty} = 0.4
+                threshold_low {mustBeNonempty} = -0.4
+                threshold_high {mustBeNonempty} = 0.4
             end
-            data((data(:,2))>threshold,:) = [];
+            data((data(:,2))<threshold_low,:) = [];
+            data((data(:,2))>threshold_high,:) = [];
         end
     end
 end
