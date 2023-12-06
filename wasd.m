@@ -56,7 +56,7 @@ classdef wasd
             stem(frequencies_shifted,abs(real(fourier)))
             title("Frequency plot of a "+ duration +" minute game of " + obj.game);
             xlabel('Frequencies (Hz)')
-            ylabel('Amplitude')
+            ylabel('Magnitude')
             xlim([-0.5 0.5])
             ylim([0 1000])
         end
