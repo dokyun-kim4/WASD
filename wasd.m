@@ -26,11 +26,10 @@ classdef wasd
             t = accel_t(:,1);
             duration = round(t(end)/60);
             
-            figure()
-            plot(accel_t(:,1),accel_t(:,2))
-            title("Wrist y-accel during a "+ duration+ " minute game of " + obj.game);
+            plot(t,accel_t(:,2))
+            title("Wrist y-Accel Of A "+ duration+ " Minute Game Of " + obj.game);
             xlabel('Time (sec)')
-            ylabel('y-Acceleration (m/s^2)')
+            ylabel('Acceleration (m/s^2)')
         end
         function freq_plot(obj,which)
             switch which
@@ -50,15 +49,34 @@ classdef wasd
             low = (-pi+(pi/N))*Fs;
             high = (pi-(pi/N))*Fs;
             frequencies_shifted = linspace(low, high, N)';
+
+            % Find indices corresponding to frequencies above 0.05 Hz
+            index_range = find(frequencies_shifted > 0.1);
+            
+            % Extract data for frequencies above 0.05 Hz
+            freq_above_0_05 = frequencies_shifted(index_range);
+            fourier_above_0_05 = fourier(index_range);
+            
+            [max_amp, index] = max(abs(real(fourier_above_0_05)));
+            freq_index = freq_above_0_05(index);
             
             duration = round(t(end)/60);
-            figure()
+            hold on
             stem(frequencies_shifted,abs(real(fourier)))
-            title("Frequency plot of a "+ duration +" minute game of " + obj.game);
+            plot(freq_index,max_amp,'ro')
+            text(freq_index, max_amp, ['Max freq: ', num2str(round(freq_index,3))], 'VerticalAlignment', 'bottom', 'HorizontalAlignment', 'left')            
+            title("Frequency Plot Of A "+ duration +" Minute Game of " + obj.game);
             xlabel('Frequencies (Hz)')
             ylabel('Magnitude')
             xlim([-0.5 0.5])
             ylim([0 1000])
+        end
+        function subplots(obj,axis)
+            figure()
+            subplot(2,1,1)
+            obj.game_plot(axis)
+            subplot(2,1,2)
+            obj.freq_plot(axis)
         end
     end
     methods(Static)
