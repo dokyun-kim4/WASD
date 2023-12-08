@@ -19,9 +19,10 @@ tf_data3.game = "TitanFall 2";
 fp = wasd('data/frostpunk_1.mat');
 fp.game = 'Frostpunk';
 
-lol_data2.ty = lol_data2.trim(lol_data2.ty,-5.5,-2.5);
-lol_data2.subplots('y')
+lol_data1.ty = lol_data1.trim(lol_data1.ty,-5.5,2.5);
+lol_data1.subplots('y')
 
+fp.ty = fp.trim(fp.ty,-3,2);
 fp.subplots('y')
 
 ror_data2.ty = ror_data2.trim(ror_data2.ty,-8,-1);

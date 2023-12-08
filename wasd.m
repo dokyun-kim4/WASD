@@ -51,7 +51,7 @@ classdef wasd
             frequencies_shifted = linspace(low, high, N)';
 
             % Find indices corresponding to frequencies above 0.05 Hz
-            index_range = find(frequencies_shifted > 0.1);
+            index_range = find(frequencies_shifted > 0.2);
             
             % Extract data for frequencies above 0.05 Hz
             freq_above_0_05 = frequencies_shifted(index_range);
