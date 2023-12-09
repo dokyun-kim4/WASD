@@ -28,7 +28,7 @@
 
           <!-- Content -->
           <section id="content">
-            <h3>Measuring Wrist Acceleration</h3>
+            <h3>Data Collection</h3>
             <p>
               In order to analyze the wrist movement for different games, we
               needed a secure way to attach a sensor to the player's wrist. We
@@ -56,18 +56,26 @@
               <li>Counter Strike (FPS)</li>
             </ul>
             <p>giving us a total of 8 datasets.</p>
-            <h3>Data Processing</h3>
+
+            <!-- TODO -->
+            <h3>Motion Model</h3>
+            <p>
+              Before measuring and analyzing wrist movement, we need to
+              determine which wrist motion we are interested in. Based on the
+              image below, most wrist movement produced while gaming will be in
+              the y-direction. Thus, we will be collecting and analyzing the
+              y-acceleration data from the phone's accelerometer.
+            </p>
+            <img style="width: 20%" src="images/setupwitharrows.png" />
+            <p>MOTION MODEL DESCRIPTION</p>
+
+            <h3>Signal Processing</h3>
             <p>
               Once we have data, we can now analyze it using the Fourier
               transform. For the purpose of this section, we will be using data
               from a game of League of Legends.
             </p>
-            <img style="width: 20%" src="images/phone.png" />
-            <p>
-              Shown above are the phone's cartesian axes. Given the way the
-              phone is attached to the player's wrist, we will be looking at the
-              y-acceleration values from the phone's accelerometer data.
-            </p>
+
             <img style="width: 35%" src="images/graph.png" />
             <p>Y-acceleration data from a game of League of Legends</p>
             <p>
@@ -77,6 +85,9 @@
             </p>
             <img style="width: 35%" src="images/fft.png" />
             <p>Signal in the frequency domain; [-0.5 &le; x &le; 0.5]</p>
+
+            <h3>Our Algorithm</h3>
+            <p>Description of the wrist pain scale model</p>
           </section>
         </div>
         <div style="text-align: center">
