@@ -51,7 +51,7 @@ classdef wasd
             low = (-pi+(pi/N))*Fs;
             high = (pi-(pi/N))*Fs;
             frequencies_shifted = linspace(low, high, N)';
-
+            
             % Find indices corresponding to frequencies above 0.05 Hz
             index_range = find(frequencies_shifted > 0.2);
             
@@ -66,7 +66,7 @@ classdef wasd
             hold on
             stem(frequencies_shifted,abs(real(fourier)))
             plot(max_freq,max_amp,'ro')
-            text(max_freq, max_amp, ['Max freq: ', num2str(round(max_freq,3))], 'VerticalAlignment', 'bottom', 'HorizontalAlignment', 'left')            
+            text(max_freq, max_amp, ['Max freq: ', num2str(round(max_freq,3))], 'VerticalAlignment', 'bottom', 'HorizontalAlignment', 'left')
             title("Frequency Plot Of A "+ duration +" Minute Game of " + obj.game);
             xlabel('Frequencies (Hz)')
             ylabel('Magnitude')
@@ -92,14 +92,16 @@ classdef wasd
             data((data(:,2))>threshold_high,:) = [];
         end
         function score = strain_score(freq)
-            if freq >= 0.2 && freq < 0.3
+            if freq >= 0.2 && freq < 0.25
                 score = 1;
-            elseif freq >= 0.3 && freq < 0.4
+            elseif freq >= 0.25 && freq < 0.3
                 score = 2;
-            elseif freq >= 0.4 && freq < 0.5
+            elseif freq >= 0.3 && freq < 0.35
                 score = 3;
-            elseif freq >= 0.5
+            elseif freq >= 0.35 && freq < 0.4
                 score = 4;
+            elseif freq >=0.4
+                score = 5;
             else
                 % Handle cases where the input is outside the specified ranges
                 error('Input value must be between 0.2 and above.');
