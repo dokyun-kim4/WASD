@@ -5,68 +5,73 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+  <head>
+    <title>Results</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+      <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+  </head>
 
-<head>
-  <title>Results</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript>
-    <link rel="stylesheet" href="assets/css/noscript.css" />
-  </noscript>
-</head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+      <!-- Main -->
+      <div id="main" class="wrapper style1">
+        <div class="container">
+          <header class="major">
+            <h2>Results</h2>
+          </header>
 
-<body class="is-preload">
-  <div id="page-wrapper">
-    <!-- Main -->
-    <div id="main" class="wrapper style1">
-      <div class="container">
-        <header class="major">
-          <h2>Results</h2>
-        </header>
+          <!-- Content -->
+          <section id="graphs">
+            <h3>Game Graphs</h3>
+            <p>
+              When determining the max frequency, values below 0.2 Hz were
+              ignored since those frequencies are most likely results of
+              downtime during gameplay.
+            </p>
+            <img width="50%" src="images/league.png" />
+            <p>
+              Figure 1. A graph obtained from League of Legends, a MOBA game.<br />
+              The max frequency is 0.204 Hz.
+            </p>
+            <img width="50%" src="images/frostpunk.png" />
+            <p>
+              Figure 2. A graph obtained from Frostpunk, a Strategy game.<br />
+              The max frequency is 0.206 Hz.
+            </p>
+            <img width="50%" src="images/cs2.png" />
+            <p>
+              Figure 3. A graph obtained from Counter Strike 2, a FPS game.
+              <br />
+              The max frequency is 0.31 Hz.
+            </p>
+            <img width="50%" src="images/titanfall2.png" />
+            <p>
+              Figure 4. A graph obtained from Titanfall 2, a FPS game. <br />
+              The max frequency is 0.324 Hz.
+            </p>
+            <img width="50%" src="images/riskofrain2.png" />
+            <p>
+              Figure 5. A graph obrained from Risk of Rain 2, a TPS game. <br />
+              The max frequency is 0.38 Hz.
+            </p>
+          </section>
 
-        <!-- Content -->
-        <section id="graphs">
-          <h3>Game Graphs</h3>
-          <p>
-            When determining the max frequency, values below 0.2 Hz were
-            ignored since those frequencies are most likely results of
-            downtime during gameplay.
-          </p>
-          <img width="50%" src="images/league.png" />
-          <p>
-            Figure 1. A graph obtained from League of Legends, a MOBA game.<br />
-            The max frequency is 0.204 Hz.
-          </p>
-          <img width="50%" src="images/frostpunk.png" />
-          <p>
-            Figure 2. A graph obtained from Frostpunk, a Strategy game.<br />
-            The max frequency is 0.206 Hz.
-          </p>
-          <img width="50%" src="images/cs2.png" />
-          <p>
-            Figure 3. A graph obtained from Counter Strike 2, a FPS game.
-            <br />
-            The max frequency is 0.31 Hz.
-          </p>
-          <img width="50%" src="images/titanfall2.png" />
-          <p>
-            Figure 4. A graph obtained from Titanfall 2, a FPS game. <br />
-            The max frequency is 0.324 Hz.
-          </p>
-          <img width="50%" src="images/riskofrain2.png" />
-          <p>
-            Figure 5. A graph obrained from Risk of Rain 2, a TPS game. <br />
-            The max frequency is 0.38 Hz.
-          </p>
-        </section>
-
-        <section>
-          <h3>Wrist Pain Scale</h3>
-            <img src="images/wrist_pain_rating.png"/>
-            <p>The MATLAB code snippet above shows how we simplified the maximum frequencies we obtained from each game to a scale from 1 to 5
-              on wrist pain-- 1 being on the lower end of possible wrist pain (with frequencies between 0.2 to 0.25) and 5 being the higher end,
-              with wrist movement frequencies above 0.4 Hz.
+          <section>
+            <h3>Wrist Pain Scale</h3>
+            <img src="images/wrist_pain_rating.png" />
+            <p>
+              The MATLAB code snippet above shows how we simplified the maximum
+              frequencies we obtained from each game to a scale from 1 to 5 on
+              wrist pain-- 1 being on the lower end of possible wrist pain (with
+              frequencies between 0.2 to 0.25) and 5 being the higher end, with
+              wrist movement frequencies above 0.4 Hz.
             </p>
             <p>
               In this scale, the games below would score wrist pain numbers of:
@@ -76,139 +81,154 @@
               <li><b>Titanfall 2:</b> 3</li>
               <li><b>Risk of Rain 2:</b> 4</li>
             </p>
-        </section>
 
-        <section id="conclusion">
-          <h3>Conclusion</h3>
-          <p>
-            Our frequency analyses of each game's horizontal mouse movement
-            indicate that FPS and TPS games (where the player must constantly
-            move their mouse around to change their camera view and aim in
-            specific spots) have more frequent wrist movements than a game
-            like League of Legends, where the camera is relatively fixed in a
-            birds-eye view and needs less aiming in particular parts of the
-            screen.
-          </p>
-          <p>
-            We discovered a research paper by Christina Bach Lund et. al
-            analyzing similar wrist movements in different occupations and
-            their relations to development of Carpal Tunnel Syndrome. In this
-            paper, the mean power frequencies of wrist movements during the
-            work day were calculated and a clear connection was found between
-            higher-frequency wrist movements and an increased risk to
-            developing Carpal Tunnel Syndrome.
-          </p>
-          <p>
-            In a more slow-paced game like League of Legends, the average
-            wrist movement frequency was found to be &lt; 0.2 Hz; in the
-            paper, this frequency corresponded to jobs such as office workers
-            and bank assistants. Given that there aren't many constant, fast
-            mouse movements in League of Legends, this relationship makes
-            sense. On the other hand, fast-paced games where the player has to
-            rapidly move their mouse (to either switch camera views or aim)
-            had higher frequencies in the range of 0.3 - 0.45 Hz.
-            Wrist-intensive jobs, such as laundry and slaughterhouse workers,
-            had similar high wrist frequencies.
-          </p>
-          <h4>What does this tell us?</h4>
-          <p>
-            In games from the FPS and TPS genre, where constant and rapid
-            mouse movements are required, players are essentially moving their
-            wrist as frequently as people in intensive jobs would. Meanwhile,
-            games with less aiming and less need to switch camera views have
-            fewer wrist movements. Therefore, in TPS and FPS games, players
-            should be more mindful of how often they're playing and make sure
-            to take breaks in between so they don't damage their wrists.
-          </p>
-          <h3>Recommendations and Application</h3>
+            Visit our
+            <a
+              href="https://github.com/dokyun-kim4/WASD"
+              class="icon brands alt fa-github"
+            >
+              GitHub Repo
+            </a>
+            for the full code.
+          </section>
 
-          <p>
-            Many of the methods and exercises of companies for office worker ergonomics can be applied to gaming. Both
-            spend prolonged periods in an office setting with continuous and sometimes rapid wrist movement. Some of
-            those methods include posture, proper angle of your wrist, periodically changing positions, and stretching.
-          </p>
-          <p>
-            While these exercises are often preached as good practice, many do not follow them. That is where our data
-            can become useful. Two categories determine when an injury can occur. Rapid and prolonged movement are both
-            the worst-case scenarios. Using the existing data, we can create metrics and recommendations based on the
-            type of activity. Or, if we want to integrate a smart and active system, we could have data be viewed live.
-            Similar to a fitness watch telling you to get up and move, we can have a device actively monitor wrist
-            frequency to determine when breaks or exercise are needed.
-          </p>
-          <p>
-            However, what do we do if said movement needs to be done during a long-duration game? One can't simply stop
-            playing when the action is at its climax. A simple game monitoring software like Overwolf can be paired to
-            our device's programming to avoid the issue.
-          </p>
-          <p>
-            The two genres of games that generated the highest frequency were FPS and TPS games; thus, following
-            recommended ergonomic practices or using your forearm more instead of only your wrist is vital.
+          <section id="conclusion">
+            <h3>Conclusion</h3>
+            <p>
+              Our frequency analyses of each game's horizontal mouse movement
+              indicate that FPS and TPS games (where the player must constantly
+              move their mouse around to change their camera view and aim in
+              specific spots) have more frequent wrist movements than a game
+              like League of Legends, where the camera is relatively fixed in a
+              birds-eye view and needs less aiming in particular parts of the
+              screen.
+            </p>
+            <p>
+              We discovered a research paper by Christina Bach Lund et. al
+              analyzing similar wrist movements in different occupations and
+              their relations to development of Carpal Tunnel Syndrome. In this
+              paper, the mean power frequencies of wrist movements during the
+              work day were calculated and a clear connection was found between
+              higher-frequency wrist movements and an increased risk to
+              developing Carpal Tunnel Syndrome.
+            </p>
+            <p>
+              In a more slow-paced game like League of Legends, the average
+              wrist movement frequency was found to be &lt; 0.2 Hz; in the
+              paper, this frequency corresponded to jobs such as office workers
+              and bank assistants. Given that there aren't many constant, fast
+              mouse movements in League of Legends, this relationship makes
+              sense. On the other hand, fast-paced games where the player has to
+              rapidly move their mouse (to either switch camera views or aim)
+              had higher frequencies in the range of 0.3 - 0.45 Hz.
+              Wrist-intensive jobs, such as laundry and slaughterhouse workers,
+              had similar high wrist frequencies.
+            </p>
+            <h4>What does this tell us?</h4>
+            <p>
+              In games from the FPS and TPS genre, where constant and rapid
+              mouse movements are required, players are essentially moving their
+              wrist as frequently as people in intensive jobs would. Meanwhile,
+              games with less aiming and less need to switch camera views have
+              fewer wrist movements. Therefore, in TPS and FPS games, players
+              should be more mindful of how often they're playing and make sure
+              to take breaks in between so they don't damage their wrists.
+            </p>
+            <h3>Recommendations and Application</h3>
 
-          </p>
+            <p>
+              Many of the methods and exercises of companies for office worker
+              ergonomics can be applied to gaming. Both spend prolonged periods
+              in an office setting with continuous and sometimes rapid wrist
+              movement. Some of those methods include posture, proper angle of
+              your wrist, periodically changing positions, and stretching.
+            </p>
+            <p>
+              While these exercises are often preached as good practice, many do
+              not follow them. That is where our data can become useful. Two
+              categories determine when an injury can occur. Rapid and prolonged
+              movement are both the worst-case scenarios. Using the existing
+              data, we can create metrics and recommendations based on the type
+              of activity. Or, if we want to integrate a smart and active
+              system, we could have data be viewed live. Similar to a fitness
+              watch telling you to get up and move, we can have a device
+              actively monitor wrist frequency to determine when breaks or
+              exercise are needed.
+            </p>
+            <p>
+              However, what do we do if said movement needs to be done during a
+              long-duration game? One can't simply stop playing when the action
+              is at its climax. A simple game monitoring software like Overwolf
+              can be paired to our device's programming to avoid the issue.
+            </p>
+            <p>
+              The two genres of games that generated the highest frequency were
+              FPS and TPS games; thus, following recommended ergonomic practices
+              or using your forearm more instead of only your wrist is vital.
+            </p>
 
-          <p>
-            Below are some wrist exercises we heavily recommend you do in
-            between or after games:
-            <li>
-              <b>Prayer Position Stretch:</b> Place your palms together in
-              front of you and slowly move your hands towards your stomach
-              until you feel your wrists stretch.
-            </li>
-            <li>
-              <b>Palm-to-Floor/Palm-to-Ceiling Stretch:</b> With one palm
-              facing towards the floor, gently use the other hand to bend your
-              fingers back towards you until you feel a stretch in your wrist.
-              You can do the same with your palm facing the ceiling.
-            </li>
-            <li>
-              <b>Wrist Circles:</b> With palms facing the floor, make a loose
-              gripping gesture around invisible bike handlebars. Move your
-              wrists up/down and side to side, and follow with rotating your
-              wrists in circles towards the inside and then outside of your
-              body.
-            </li>
-            <li>
-              <b>Hand Open-and-Close:</b> Make a tight fist and hold it close
-              for several seconds. Then open your hand and spread your
-              fingers, holding the pose for several seconds.
-            </li>
-          </p>
+            <p>
+              Below are some wrist exercises we heavily recommend you do in
+              between or after games:
+              <li>
+                <b>Prayer Position Stretch:</b> Place your palms together in
+                front of you and slowly move your hands towards your stomach
+                until you feel your wrists stretch.
+              </li>
+              <li>
+                <b>Palm-to-Floor/Palm-to-Ceiling Stretch:</b> With one palm
+                facing towards the floor, gently use the other hand to bend your
+                fingers back towards you until you feel a stretch in your wrist.
+                You can do the same with your palm facing the ceiling.
+              </li>
+              <li>
+                <b>Wrist Circles:</b> With palms facing the floor, make a loose
+                gripping gesture around invisible bike handlebars. Move your
+                wrists up/down and side to side, and follow with rotating your
+                wrists in circles towards the inside and then outside of your
+                body.
+              </li>
+              <li>
+                <b>Hand Open-and-Close:</b> Make a tight fist and hold it close
+                for several seconds. Then open your hand and spread your
+                fingers, holding the pose for several seconds.
+              </li>
+            </p>
 
-          <h3>Sources</h3>
-          <p>
-            Lund, Christina Bach et al. “Movements of the wrist and the risk
-            of carpal tunnel syndrome: a nationwide cohort study using
-            objective exposure measurements.” Occupational and environmental
-            medicine vol. 76,8 (2019): 519-526. doi:10.1136/oemed-2018-105619
-          </p>
-          <p>
-            Fort HealthCare. “Hand &amp; Wrist Stretches for
-            Computer/Smartphone Users.” Fort HealthCare, 24 Oct. 2023,
-            www.forthealthcare.com/hand-and-wrist-stretches-for-computer-and-smartphone-users/
-          </p>
-        </section>
+            <h3>Sources</h3>
+            <p>
+              Lund, Christina Bach et al. “Movements of the wrist and the risk
+              of carpal tunnel syndrome: a nationwide cohort study using
+              objective exposure measurements.” Occupational and environmental
+              medicine vol. 76,8 (2019): 519-526. doi:10.1136/oemed-2018-105619
+            </p>
+            <p>
+              Fort HealthCare. “Hand &amp; Wrist Stretches for
+              Computer/Smartphone Users.” Fort HealthCare, 24 Oct. 2023,
+              www.forthealthcare.com/hand-and-wrist-stretches-for-computer-and-smartphone-users/
+            </p>
+          </section>
+        </div>
+        <div style="text-align: center">
+          <a href="index.html" class="button">Back to Home</a>
+        </div>
       </div>
-      <div style="text-align: center">
-        <a href="index.html" class="button">Back to Home</a>
-      </div>
+      <footer id="footer">
+        <ul class="copyright">
+          <li>&copy; WASD</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </footer>
     </div>
-    <footer id="footer">
-      <ul class="copyright">
-        <li>&copy; WASD</li>
-        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-      </ul>
-    </footer>
-  </div>
 
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/jquery.dropotron.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
-
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
