@@ -9,12 +9,14 @@ classdef wasd
     end
     methods
         function game_object =  wasd(path)
+            %Organize Time vs [x,y,z] data
             data = ParseMatlabApp(path);
             game_object.tx = [data.t_Accel,data.Accel(:,1)];
             game_object.ty = [data.t_Accel,data.Accel(:,2)];
             game_object.tz = [data.t_Accel,data.Accel(:,3)];
         end
         function game_plot(obj,which)
+            %Plot Acceleration of [x,y,z] vs Time
             switch which
                 case 'x'
                     accel_t = obj.tx;
@@ -25,13 +27,13 @@ classdef wasd
             end
             t = accel_t(:,1);
             duration = round(t(end)/60);
-            
             plot(t,accel_t(:,2))
             title("Wrist y-Accel Of A "+ duration+ " Minute Game Of " + obj.game);
             xlabel('Time (sec)')
             ylabel('Acceleration (m/s^2)')
         end
-        function freq_plot(obj,which)
+        function max_freq = freq_plot(obj,which)
+            %Plot Frequency of [x,y,z]
             switch which
                 case 'x'
                     accel_t = obj.tx;
@@ -58,25 +60,25 @@ classdef wasd
             fourier_above_0_05 = fourier(index_range);
             
             [max_amp, index] = max(abs(real(fourier_above_0_05)));
-            freq_index = freq_above_0_05(index);
+            max_freq = freq_above_0_05(index);
             
             duration = round(t(end)/60);
             hold on
             stem(frequencies_shifted,abs(real(fourier)))
-            plot(freq_index,max_amp,'ro')
-            text(freq_index, max_amp, ['Max freq: ', num2str(round(freq_index,3))], 'VerticalAlignment', 'bottom', 'HorizontalAlignment', 'left')            
+            plot(max_freq,max_amp,'ro')
+            text(max_freq, max_amp, ['Max freq: ', num2str(round(max_freq,3))], 'VerticalAlignment', 'bottom', 'HorizontalAlignment', 'left')            
             title("Frequency Plot Of A "+ duration +" Minute Game of " + obj.game);
             xlabel('Frequencies (Hz)')
             ylabel('Magnitude')
             xlim([-0.5 0.5])
             ylim([0 1000])
         end
-        function subplots(obj,axis)
+        function max_freq = subplots(obj,axis)
             figure()
             subplot(2,1,1)
             obj.game_plot(axis)
             subplot(2,1,2)
-            obj.freq_plot(axis)
+            max_freq=obj.freq_plot(axis);
         end
     end
     methods(Static)
@@ -88,6 +90,20 @@ classdef wasd
             end
             data((data(:,2))<threshold_low,:) = [];
             data((data(:,2))>threshold_high,:) = [];
+        end
+        function score = strain_score(freq)
+            if freq >= 0.2 && freq < 0.3
+                score = 1;
+            elseif freq >= 0.3 && freq < 0.4
+                score = 2;
+            elseif freq >= 0.4 && freq < 0.5
+                score = 3;
+            elseif freq >= 0.5
+                score = 4;
+            else
+                % Handle cases where the input is outside the specified ranges
+                error('Input value must be between 0.2 and above.');
+            end
         end
     end
 end
